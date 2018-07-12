@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="background: linear-gradient(to right, #35c2d8, #514b9d);">
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+    </ul>
+    <% if user_signed_in? %>
+      <div style="color:white;"><%= current_user.id %>님 반갑습니다. </div>
+      <a href="/users/edit"><span class="badge badge-info">개인정보</span></a>
+      <a href="/users/sign_out"><span class="badge badge-light">로그아웃</span></a>
+    <% else %>
+      <a href="/users/sign_in"><span class="badge badge-light">로그인</span></a>
+    <% end %>
+    
+    <form class="form-inline my-2 my-lg-0" action="/post/search" method="get">
+      <div class="form-group">
+        <select name="cate" class="form-control" id="exampleFormControlSelect1" style="background-color: transparent; color:white;">
+          <option value="1">제목</option>
+          <option value="2">내용</option>
+          <option value="3">제목+내용</option>
+          <option value="4">작성자</option>
+        </select>
+      </div>
+      <input name="q" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" style="background-color: transparent; color:white;">
+      <button class="btn my-sm-0" type="submit" style="background-color: transparent; color:white;">Search</button>
+    </form>
+  </div>
+</nav>
