@@ -24,7 +24,7 @@
     </div>
     <p><%= simple_format(@post.content) %></p>
     
-    <% unless @post.image.nil? %>
+    <% unless @post.image.nil? or @post.thumb.nil? or @post.thumb.nil?%>
         <%= image_tag @post.image %>
         <%= image_tag @post.thumb %>
         <%= image_tag @post.middle %>
