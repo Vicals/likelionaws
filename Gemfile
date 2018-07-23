@@ -39,6 +39,7 @@ gem 'mini_magick'
 # gem 'capistrano-rails', group: :development
 
   gem 'sqlite3'
+  gem "therubyracer"
 
 
 group :development, :test do
